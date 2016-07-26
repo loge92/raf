@@ -1,0 +1,223 @@
+body{
+    font: 1em/1.5em "Source Sans Pro", sans-serif;
+    margin: 0;
+}
+a{
+    color: #863565;
+}
+h2{
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+    
+}
+.container{
+    position: absolute;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 95%;
+    top: 50%;
+    /*
+    max-width: 90%;
+    */
+}
+
+/*MAP & DOTS*/
+.map{
+    position: relative;
+}
+.map-dots{
+    list-style: none;
+    margin: 0;
+}
+.map-dot{
+    position: absolute;      
+}
+/* surrounded circles */
+
+.map-dot:after{ 
+    content: '';
+    border: 1.85px solid #863565;
+    border-radius: 50%;
+    opacity: 0;
+    height: 2em;
+    width: 2em;
+    position: absolute; 
+    left: -12px;
+    top: -12px;
+  
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-name: circle;   
+}
+.map-dot a{
+	background-color: #863565;
+    border-radius: 50%;
+    height: .6em;
+    width: .6em;
+    display: block;
+    text-indent: -9999px;
+}
+
+
+
+/* CUANDO HACES HOVER EN UN DOT TRAE LA "INFO" DEL DOT */
+.map-dot:hover
+.map-dot-info{
+    display: block;
+}
+
+
+/* ------------------------Coutries--------------------------------*/
+.map-dot-canada{
+    left: 20%;
+    top:35%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.15s;
+}
+.map-dot-canada:after{
+    animation-delay: 0s;
+}
+.map-dot-usa{
+    left: 22%;
+    top:43%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.25s;
+}
+.map-dot-usa:after{
+    animation-delay: .8s;
+}
+.map-dot-mexico{
+    left: 22.3%;
+    top:51%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.35s;
+}
+.map-dot-mexico:after{
+    animation-delay: 1s;
+}
+.map-dot-caribbean{
+    left: 28.5%;
+    top:52%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.47s;
+}
+.map-dot-caribbean:after{
+    animation-delay: 1.2s;
+}
+.map-dot-centro{
+    left: 26.5%;
+    top:56%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.6s;
+}
+.map-dot-centro:after{
+    animation-delay: 1.3s;
+}
+.map-dot-sud{
+    left: 32%;
+    top:64%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.7s;
+}
+.map-dot-sud:after{
+    animation-delay: 1.5s;
+}
+.map-dot-europe{
+    left: 49%;
+    top:39%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.78s;
+}
+.map-dot-europe:after{
+    animation-delay: 1.65s;
+}
+.map-dot-asia{
+
+    left: 73%;
+    top:45%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.95s;
+}
+.map-dot-asia:after{
+    animation-delay: 1.8s;
+}
+/*--------------------------END Countries---------------------------*/
+
+
+/* Country Info */
+.map-dot-info{
+    display: none;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -.5em);
+    position: absolute;    
+}
+.map-dot-info header{
+    background-color: #863565;
+    border-radius: .5em .5em .5em .5em;
+    width: 8em; /*Correjir align*/
+}
+
+/* Animations */
+
+@keyframes circle{
+    0% {
+        transform: scale(0);
+    }
+    35% {
+        opacity: .85;
+    }
+    55%{
+        opacity: .15;
+    }
+    80% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes info{
+    0%{
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+.animate-info{
+    animation-duration: .5s;
+    animation-name: info;
+}
+@keyframes dot{
+    0%{
+        opacity: 0;
+	}
+	85%{
+		opacity: 1;
+	}
+}
+.animate-dot{
+    animation-duration: 1.25s;
+    animation-name: dot;
+    animation-fill-mode: both;
+} 
+@keyframes map{
+    0%{
+        opacity: .4;
+		transform: scale3d(.8, .8, .8);
+    }
+    100%{
+        opacity: 1;
+		transform: scale3d(1, 1, 1);
+    }
+}
+.animate-map{
+    animation-duration: 1.25s;
+    animation-name: map;
+} 
